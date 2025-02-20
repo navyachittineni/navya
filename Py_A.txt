@@ -1,0 +1,644 @@
+#How to declare different datatypes
+___________________________________
+
+1.Numeric Data Types
+====================
+
+Integers (int): Whole numbers (no fractional part).
+--------------
+Ex:
+age = 30
+count = -10
+---------------------------------------------------------------------------------------------------
+Floating-point numbers (float): Numbers with a decimal point (or in scientific notation).
+------------------------------
+Ex:
+pi = 3.14159
+temperature = 98.6
+distance = 2.5e6  # 2.5 * 10^6
+---------------------------------------------------------------------------------------------------
+Complex numbers (complex): Numbers with a real and imaginary part.
+-------------------------
+Ex:
+z = 2 + 3j  # 2 is the real part, 3j is the imaginary part
+--------------------------------------------------------------------------------------------------
+
+2. Strings (str): Sequences of characters enclosed in single quotes (') or double quotes (").
+================
+Ex:
+name = "Alice"
+message = 'Hello, world!'
+multiline_string = """This is a
+multiline string."""  # Triple quotes for multiline strings
+-------------------------------------------------------------------------------------------------
+
+3. Booleans (bool): Represent truth values: True or False.
+==================
+Ex:
+is_student = True
+is_adult = False
+-------------------------------------------------------------------------------------------------
+
+4. Sequences:
+============
+
+Lists (list): Ordered, mutable (changeable) sequences of items.  Items can be of different types.
+------------
+Ex:
+my_list = [1, 2, "apple", 3.14, True]
+---------------------------------------------------------------------------------------------------------------------------------
+Tuples (tuple): Ordered, immutable (unchangeable) sequences of items.  Similar to lists but you can't modify them after creation.
+--------------
+Ex:
+my_tuple = (1, 2, "apple", 3.14, True)
+---------------------------------------------------------------------------------------------------------------------------------
+Ranges (range): Represents a sequence of numbers, often used in loops.
+--------------
+Ex:
+numbers = range(10)  # Represents numbers from 0 to 9
+----------------------------------------------------------------------------
+
+5. Mappings:
+===========
+
+Dictionaries (dict): Unordered collections of key-value pairs.
+-------------------
+Ex:
+my_dict = {"name": "Bob", "age": 25, "city": "New York"}
+----------------------------------------------------------------------------
+
+6. Sets (set): Unordered collections of unique elements.
+=============
+
+Ex:
+
+my_set = {1, 2, 3, 3, 4}  # The set will contain {1, 2, 3, 4} (duplicates are removed)
+--------------------------------------------------------------------------------------------------------------------------------------
+How Python Determines Types (Dynamic Typing):
+=============================================
+Python
+
+x = 10      # x is an integer
+x = "hello"  # x is now a string (the old integer value is gone)
+x = [1, 2, 3] # x is now a list
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ #Operators
+___________
+
+1. Arithmetic Operators: Used for mathematical calculations.
+========================
+
+Operator	Description	          Example	Result
+
++	        Addition	          5 + 2 	7
+-	        Subtraction	          5 - 2 	3
+*	        Multiplication	          5 * 2 	10
+/	        Division (float result)	  5 / 2 	2.5
+//	        Floor Division (int)	  5 // 2	2
+%	        Modulus (remainder)	  5 % 2 	1
+**	        Exponentiation	          5 ** 2	25
+--------------------------------------------------------------------------------------------
+
+2. Comparison Operators: Used to compare values and return a boolean result (True or False).
+=======================
+
+Operator	Description	              Example	Result
+
+==      	Equal to	              5 == 5	True
+!=      	Not equal to	              5 != 2	True
+>	        Greater than                  5 > 2	True
+<	        Less than	              5 < 2	False
+>=	        Greater than or equal to      5 >= 5	True
+<=	        Less than or equal to	      5 <= 2	False
+---------------------------------------------------------------------------------------------
+
+3. Logical Operators: Used to combine or modify boolean values.
+=====================
+Operator	Description	                              Example	        Result
+
+and	     Returns True if both operands are True	      True and True	True
+or	     Returns True if at least one operand is True     True or False	True
+not	     Returns the opposite of the operand's value      not True	        False
+---------------------------------------------------------------------------------------------
+
+4. Assignment Operators: Used to assign values to variables.
+=======================
+
+Operator	Description	           Example	Equivalent to
+
+=	        Assignment                 x = 5	x = 5
++=	        Add and assign	           x += 2	x = x + 2
+-=	        Subtract and assign	   x -= 2	x = x - 2
+*=	        Multiply and assign	   x *= 2	x = x * 2
+/=	        Divide and assign	   x /= 2	x = x / 2
+//=	        Floor divide and assign	   x //= 2	x = x // 2
+%=	        Modulus and assign	   x %= 2	x = x % 2
+**=	        Exponentiate and assign	   x **= 2	x = x ** 2
+---------------------------------------------------------------------------------------------
+
+5. Bitwise Operators: Used to perform operations on individual bits of integers.
+====================
+Operator	Description	Example
+
+&	        Bitwise AND	5 & 3
+`\		 `              Bitwise OR
+^	        Bitwise XOR	5 ^ 3
+~	        Bitwise NOT	~5
+<<	        Left shift	5 << 1
+>>	        Right shift	5 >> 1
+----------------------------------------------------------------------------------------------
+
+6. Identity Operators: Used to check if two variables refer to the same object in memory.
+=====================
+Operator	Description	                                          Example
+
+is	        Returns True if both variables are the same object	  x is y
+is not	        Returns True if both variables are not the same1 object	  x is not y
+----------------------------------------------------------------------------------------------
+
+7. Membership Operators: Used to check if a value is a member of a sequence (like a string, list, or tuple).
+=======================
+
+Operator	Description	                                        Example
+
+in	        Returns True if a value is found in the sequence	x in my_list
+not in	        Returns True if a value is not found in the sequence	x not in my_list
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Conditional Statements-If and else statements,elif
+____________________________________________________
+
+Conditional statements (using if, elif, and else) allow you to control the flow of your Python code based on whether certain conditions are true or false.
+
+1. if statement:
+================
+The if statement executes a block of code only if a condition is True.
+
+Python
+-------
+x = 10
+
+if x > 5:
+    print("x is greater than 5")  # This will be executed because x > 5 is True
+
+if x < 0:
+    print("x is negative")  # This will NOT be executed because x < 0 is False
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+2. else statement:
+==================
+The else statement provides an alternative block of code to execute if the if condition is False.
+
+Python
+------
+x = 3
+
+if x > 5:
+    print("x is greater than 5")  # This will NOT be executed
+else:
+    print("x is not greater than 5")  # This will be executed because x > 5 is False
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. elif statement (else if):
+===========================
+The elif statement allows you to check multiple conditions in sequence.  It's used when you have more than two possibilities.  An elif block is executed only if the preceding if or elif conditions are False, and its own condition is True.
+
+Python
+------
+x = 5
+
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:  # Check if x is equal to 5
+    print("x is equal to 5")  # This will be executed
+else:
+    print("x is less than 5")
+-----------------------------------------------------------
+
+Chaining if, elif, and else:
+===========================
+You can chain multiple elif statements together to check many conditions.  An else block at the end is optional; it acts as a "catch-all" if none of the preceding conditions are met.
+
+Python
+------
+grade = 85
+
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")  # This will be executed
+elif grade >= 70:
+    print("C")
+elif grade >= 60:
+    print("D")
+else:
+    print("F")
+--------------------------------------------------------------------------------------------------------------------
+Nested if statements:
+====================
+You can also nest if statements inside other if, elif, or else blocks. This allows for more complex decision-making.
+
+Python
+------
+x = 10
+y = 5
+
+if x > 5:
+    if y > 2:
+        print("x is greater than 5 and y is greater than 2")  # This will be executed
+    else:
+        print("x is greater than 5 but y is not greater than 2")
+else:
+    print("x is not greater than 5")
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Loops - While, for, jump statements- break,continue
+_____________________________________________________
+
+Loops in Python allow you to repeat a block of code multiple times.  There are two main types of loops: while and for.  Jump statements (break and continue) provide control over how loops execute.
+
+1. while loop:
+=============
+The while loop repeats a block of code as long as a condition is True.
+
+Python
+------
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1  # Important: Increment the counter to avoid an infinite loop
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+Important: If the condition in a while loop never becomes False, you'll create an infinite loop, which will run forever (or until you manually stop it).  Make sure you have a way to make the condition False eventually.
+---------------------------------------------------------------------------------------------------------------------------------
+2. for loop:
+===========
+The for loop is typically used to iterate over a sequence (like a list, tuple, string, or range) or other iterable objects.
+
+Python
+------
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+
+# Output:
+# apple
+# banana
+# cherry
+
+# Using range() for a numerical loop:
+for i in range(5):  # Generates numbers from 0 to 4
+    print(i)
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+--------------------------------------------------------------------------------------------------------------------------------
+3. break statement:
+==================
+The break statement is used to exit a loop prematurely, even if the loop condition is still True.
+
+Python
+------
+for i in range(10):
+    if i == 5:
+        break  # Exit the loop when i is 5
+    print(i)
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+--------------------------------------------------------------------------------------------------------------------------------
+4. continue statement:
+======================
+The continue statement is used to skip the rest of the current iteration of the loop and proceed to the next iteration. 1    
+
+Python
+------
+for i in range(10):
+    if i % 2 == 0:  # Skip even numbers
+        continue
+    print(i)  # Print only odd numbers
+
+# Output:
+# 1
+# 3
+# 5
+# 7
+# 9
+........................................
+Ex Pro:
+
+names = ["Alice", "Bob", "Charlie", "David"]
+search_name = "Bob"
+found = False
+
+for name in names:
+    if name == search_name:
+        found = True
+        break  # Exit the loop once the name is found
+
+if found:
+    print(f"{search_name} found in the list")  # Output: Bob found in the list
+else:
+    print(f"{search_name} not found in the list")
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Functions - Declaring a function and calling a function, return statement usage
+________________________________________________________________________________
+
+
+
+Functions are reusable blocks of code that perform specific tasks. They help organize your code, make it more readable, and avoid repetition.
+
+1. Defining a function:
+=======================
+You define a function using the def keyword, followed by the function name, parentheses (), and a colon :. The code block 1  that makes up the function is indented.   
+
+Python
+------
+def greet(name):  # Function definition
+    """Greets the person passed in as a parameter."""  # Docstring (optional, but recommended)
+    print("Hello, " + name + "!")  # Function body
+
+"""...""": Docstring (optional). A multiline string used to document the function's purpose, arguments, and return value. Good practice to include docstrings.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Calling a function:
+======================
+To use (execute) a function, you "call" it by writing the function name followed by parentheses (). If the function has parameters, you provide the arguments (values) inside the parentheses.
+
+Python
+------
+greet("Alice")  # Function call with the argument "Alice"
+greet("Bob")  # Another function call
+
+# Output:
+# Hello, Alice!
+# Hello, Bob!
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. return statement:
+====================
+The return statement is used to send a value back from the function to the caller.  A function can have zero or more return statements.  When a return statement is encountered, the function execution stops, and the specified value is returned.
+
+Python
+------
+def add(x, y):
+    """Adds two numbers and returns the sum."""
+    sum_of_numbers = x + y
+    return sum_of_numbers  # Return the sum
+
+result = add(5, 3)  # Call the function and store the returned value
+print(result)  # Output: 8
+.....................................................................
+def is_even(number):
+    """Checks if a number is even and returns True or False."""
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+print(is_even(10))  # Output: True
+print(is_even(7))   # Output: False
+.....................................................................
+#A function can return multiple values as a tuple
+def get_name_and_age(name, age):
+    return name, age
+
+my_name, my_age = get_name_and_age("Alice", 30)
+print(my_name) #Output: Alice
+print(my_age)  #Output: 30
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+If a function doesn't have a return statement, it implicitly returns None.
+You can return any data type from a function (integer, string, list, tuple, dictionary, etc.).
+Returning multiple values: You can return multiple values from a function by separating them with commas. These values are returned as a tuple.
+4. Function parameters:
+
+Positional arguments: Arguments are passed to the function in the order they are defined.
+Keyword arguments: You can pass arguments by specifying the parameter name, like greet(name="Charlie"). This makes your code more readable, especially for functions with many parameters.
+Default parameter values: You can provide default values for parameters in the function definition. If the caller doesn't provide a value for that parameter, the default value is used.
+Python
+
+def power(base, exponent=2):  # exponent has a default value of 2
+    return base ** exponent
+
+print(power(3))      # Output: 9 (exponent uses the default value 2)
+print(power(3, 3))   # Output: 27 (exponent is explicitly set to 3)
+print(power(base=2, exponent=4)) #Output: 16 (using keyword arguments)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Scope:
+=========
+Variables defined inside a function have local scope.  They are only accessible within that function. Variables defined outside any function have global scope and can be accessed from anywhere in the code.
+
+Python
+-------
+global_var = 10  # Global variable
+
+def my_function():
+    local_var = 5  # Local variable
+    print(global_var)  # Accessing the global variable is allowed
+    print(local_var)  # Accessing the local variable is allowed
+
+my_function()
+print(global_var)  # Accessing the global variable is allowed
+# print(local_var)  # This would cause an error because local_var is not defined outside the function
+
+Benefits of using functions:
+...........................
+Modularity: Break down complex tasks into smaller, manageable functions.
+Reusability: Call the same function multiple times without rewriting the code.
+Readability: Make your code easier to understand and follow.
+Maintainability: Easier to debug and update your code.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Inbuilt functions- Atleast the most famous once- string and list
+_________________________________________________________________
+
+Python has a rich set of built-in functions that provide convenient ways to perform common tasks. Here are some of the most frequently used built-in functions, focusing on those related to strings and lists:
+
+String Functions:
+================
+
+1)len(string): Returns the length (number of characters) of the string.
+-----------
+Python
+
+text = "Hello, world!"
+length = len(text)  # length will be 13
+
+2)str(object): Converts an object to its string representation.  Useful for converting numbers or other data types to strings.
+-----------
+Python
+
+number = 123
+string_number = str(number)  # string_number will be "123"
+
+3)string.lower(): Returns a new string with all characters converted to lowercase.
+--------------
+Python
+
+text = "Hello, World!"
+lowercase_text = text.lower()  # lowercase_text will be "hello, world!"
+
+4)string.upper(): Returns a new string with all characters converted to uppercase.
+--------------
+Python
+
+text = "Hello, World!"
+uppercase_text = text.upper()  # uppercase_text will be "HELLO, WORLD!"
+
+5)string.strip(): Returns a new string with leading and trailing whitespace removed.
+--------------
+Python
+
+text = "   Hello, world!   "
+stripped_text = text.strip()  # stripped_text will be "Hello, world!"
+
+6)string.replace(old, new): Replaces all occurrences of old substring with new substring.
+------------------------
+Python
+
+text = "Hello, world!"
+new_text = text.replace("world", "Python")  # new_text will be "Hello, Python!"
+
+7)string.split(separator): Splits the string into a list of substrings based on the specified separator. If no separator is provided, it splits on whitespace.
+-----------------------
+Python
+
+text = "apple,banana,cherry"
+fruits = text.split(",")  # fruits will be ["apple", "banana", "cherry"]
+
+text = "Hello, world!"
+words = text.split()  # words will be ["Hello,", "world!"]
+
+8)string.join(iterable): Joins the elements of an iterable (like a list or tuple) into a single string, using the string as the separator.
+---------------------
+Python
+
+fruits = ["apple", "banana", "cherry"]
+combined_text = ", ".join(fruits)  # combined_text will be "apple, banana, cherry"
+
+9)string.startswith(prefix): Checks if the string starts with the given prefix. Returns True or False.
+-------------------------
+Python
+
+text = "Hello, world!"
+starts_with_hello = text.startswith("Hello")  # starts_with_hello will be True
+
+10)string.endswith(suffix): Checks if the string ends with the given suffix. Returns True or False.
+-----------------------
+Python
+
+text = "Hello, world!"
+ends_with_world = text.endswith("world!")  # ends_with_world will be True
+
+11)string.find(substring): Returns the index of the first occurrence of the substring in the string.  Returns -1 if the substring is not found.
+----------------------
+Python
+
+text = "Hello, world!"
+index = text.find("world")  # index will be 7
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+List Functions:
+==============
+
+1)len(list): Returns the number of items in the list.
+---------
+Python
+
+my_list = [1, 2, 3, 4, 5]
+length = len(my_list)  # length will be 5
+
+2)list(): Creates a new list (can be used to convert other iterables to lists).
+------
+Python
+
+my_tuple = (1, 2, 3)
+my_list = list(my_tuple)  # my_list will be [1, 2, 3]
+
+3)list.append(item): Adds item to the end of the list.
+-----------------
+Python
+
+my_list = [1, 2, 3]
+my_list.append(4)  # my_list will be [1, 2, 3, 4]
+
+4)list.insert(index, item): Inserts item at the specified index.
+------------------------
+Python
+
+my_list = [1, 2, 3]
+my_list.insert(1, 10)  # my_list will be [1, 10, 2, 3]
+
+5)list.remove(item): Removes the first occurrence of item from the list.
+-----------------
+Python
+
+my_list = [1, 2, 3, 2]
+my_list.remove(2)  # my_list will be [1, 3, 2]
+
+6)list.pop(index): Removes and returns the item at the specified index. If no index is provided, it removes and returns the last item.
+---------------
+Python
+
+my_list = [1, 2, 3]
+removed_item = my_list.pop(1)  # removed_item will be 2, my_list will be [1, 3]
+last_item = my_list.pop()  # last_item will be 3, my_list will be [1]
+
+7)list.index(item): Returns the index of the first occurrence of item in the list.
+----------------
+Python
+
+my_list = [1, 2, 3, 2]
+index = my_list.index(2)  # index will be 1
+
+8)list.count(item): Returns the number of times item appears in the list.
+----------------
+Python
+
+my_list = [1, 2, 3, 2, 2]
+count = my_list.count(2)  # count will be 3
+
+9)list.sort(): Sorts the list in place (modifies the list).  You can also provide a key function for custom sorting.
+-----------
+Python
+
+my_list = [3, 1, 4, 2]
+my_list.sort()  # my_list will be [1, 2, 3, 4]
+
+names = ["Charlie", "Alice", "Bob"]
+names.sort(key=len) # Sort by length of string, names will be ["Bob", "Alice", "Charlie"]
+
+10)list.reverse(): Reverses the list in place.
+--------------
+Python
+
+my_list = [1, 2, 3, 4]
+my_list.reverse()  # my_list will be [4, 3, 2, 1]
+
+11)list.copy(): Returns a shallow copy of the list.  Important to use copy() when you want to modify a copy of a list without affecting the original list.
+-----------
+Python
+
+original_list = [1, 2, 3]
+copied_list = original_list.copy()
+copied_list.append(4) # original_list remains unchanged, but copied_list now [1, 2, 3, 4]
+===========================================================================================================================================================================================
+
+
+
+
